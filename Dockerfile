@@ -1,14 +1,8 @@
-FROM alpine:3.1
-
-# Update
-RUN apk add --update nodejs
-
-# Install app dependencies
-COPY package.json /src/package.json
-RUN cd /src; npm install
-
-# Bundle app source
-COPY . /src
-
-EXPOSE  8080
-CMD ["node", "/src/index.js"]
+FROM node:7
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+COPY src/ /app
+CMD node index.js
+EXPOSE 8889
