@@ -4,7 +4,7 @@
   "description": "quick and dirty web service for mopidy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +13,8 @@
     "mopidy": "^0.5.0",
     "restify": "^5.0.1",
     "restify-errors": "^4.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
